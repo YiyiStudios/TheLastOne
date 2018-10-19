@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         Movement_Fixed_Update();
     }
+
     #region Movement
     void Movement_Update()
     {

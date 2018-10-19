@@ -20,6 +20,8 @@ public class VisualFieldEditor : Editor
         Handles.DrawLine(FV.transform.position, FV.transform.position + upLine * FV.viewRadius);
         Handles.DrawLine(FV.transform.position, FV.transform.position + dowmLine * FV.viewRadius);
 
+
+
     }
 
 }
