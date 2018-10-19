@@ -2,33 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VisualField : MonoBehaviour {
+public class VisualField : MonoBehaviour
+{
     public float viewAngle;
     public float viewRadius;
 
     List<int> visibleTarget = new List<int>();
 
-
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-  public  Vector3 Vector_Direction_Line(float angle,bool coordGlobal)
+    // Update is called once per frame
+    void Update()
     {
-        if (!coordGlobal)
-        {
-            angle += transform.rotation.z;
-        }
-
+        Debug.Log(transform.eulerAngles);
+    }
+    public Vector3 Vector_Direction_Line(float angle)
+    {
+        angle += transform.eulerAngles.z;
         return new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad),
                             Mathf.Sin(angle * Mathf.Deg2Rad),
                             0);
     }
+
 
 }
