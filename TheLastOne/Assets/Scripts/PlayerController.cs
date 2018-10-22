@@ -28,18 +28,11 @@ public class PlayerController : MonoBehaviour
     void Movement_Update()
     {
         mov = new Vector2(Input.GetAxisRaw("Horizontal"),
-                          Input.GetAxisRaw("Vertical")).normalized;
+                          Input.GetAxisRaw("Vertical"));
     }
     void Movement_Fixed_Update()
     {
-        if (mov.x != 0 && mov.y == 0)
-        {
-            rg2.MovePosition(rg2.position + mov * Time.deltaTime * velocity * Vector2.right);
-        }
-        if (mov.y != 0 && mov.x == 0)
-        {
-            rg2.MovePosition(rg2.position + mov * Time.deltaTime * velocity * Vector2.up);
-        }
+        rg2.MovePosition(rg2.position + mov * Time.deltaTime * velocity );
     }
     #endregion
 }
