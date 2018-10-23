@@ -12,7 +12,7 @@ public class VisualField : MonoBehaviour
     public LayerMask maskTarget;
     public LayerMask maskObstacle;
 
-    public List<Transform> visibleTarget = new List<Transform>();
+    public List<Transform> listvisibletarget = new List<Transform>();
 
     public float meshResolution;
     Mesh viewmesh;
@@ -62,8 +62,8 @@ public class VisualField : MonoBehaviour
 
     void Visible_Target()
     {
-        visibleTarget.Clear();
-        visibleTarget.Capacity = 0;
+        listvisibletarget.Clear();
+        listvisibletarget.Capacity = 0;
         Collider2D[] coll2D = Physics2D.OverlapCircleAll(transform.position, viewRadius, maskTarget);
         for (int i = 0; i < coll2D.Length; i++)
         {
@@ -74,7 +74,7 @@ public class VisualField : MonoBehaviour
                 float distobjetive = Vector2.Distance(objetive.position, transform.position);
                 if (Physics2D.Raycast(transform.position, vector_direction_objetive, distobjetive, maskTarget))
                 {
-                    visibleTarget.Add(objetive);
+                    listvisibletarget.Add(objetive);
                 }
             }
         }
@@ -85,10 +85,10 @@ public class VisualField : MonoBehaviour
     public InfoRC ConstraintsRC(float globalangle)
     {
         Vector3 endRC = Vector_Direction_Line(globalangle, true);
-        RaycastHit2D b = Physics2D.Raycast(transform.position, endRC, viewRadius, maskObstacle);
-        if (b)
+        RaycastHit2D rc = Physics2D.Raycast(transform.position, endRC, viewRadius, maskObstacle);
+        if (rc)
         {
-            return new InfoRC(true, b.point, b.distance, globalangle);
+            return new InfoRC(true, rc.point, rc.distance, globalangle);
 
         }
         else

@@ -2,15 +2,58 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy1Controller : MonoBehaviour {
+public class Enemy1Controller : MonoBehaviour
+{ 
+    enum STATE {IDLE,CHASE }
+    STATE state = STATE.IDLE;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    Vector3 a;
+    public float rotate;
+    TimeController time;
+
+    VisualField vf;
+
+    // Use this for initialization
+    void Start()
+    {
+
+        vf = GetComponent<VisualField>();
+        time = gameObject.AddComponent<TimeController>();
+        time.totaltime = 2f;
+        time.TurnOn();
+
+        a.z = transform.rotation.eulerAngles.z;
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        if (state == STATE.IDLE)
+        {
+            Rotate();
+            if (vf.listvisibletarget.Count != 0)
+            {
+                state = STATE.CHASE;
+            }
+        }
+        if(state == STATE.CHASE)
+        {
+            Chasing();
+        }
+      
+    }
+    void Rotate()
+    {
+        if (time.Finished())
+        {
+            time.Run();
+            a.z += rotate;
+            transform.rotation = Quaternion.Euler(a);
+            time.TurnOn();
+        }
+    }
+    void Chasing()
+    {
+        transform.position = Vector2.MoveTowards(transform.position,
+                                                 vf.listvisibletarget[0].transform.position,Time.deltaTime*2);
+    }
 }
