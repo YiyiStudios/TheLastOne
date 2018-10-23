@@ -27,19 +27,7 @@ public class Enemy1Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (state == STATE.IDLE)
-        {
-            Rotate();
-            if (vf.listvisibletarget.Count != 0)
-            {
-                state = STATE.CHASE;
-            }
-        }
-        if(state == STATE.CHASE)
-        {
-            Chasing();
-        }
-      
+        States();
     }
     void Rotate()
     {
@@ -55,5 +43,20 @@ public class Enemy1Controller : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position,
                                                  vf.listvisibletarget[0].transform.position,Time.deltaTime*2);
+    }
+    void States()
+    {
+        if (state == STATE.IDLE)
+        {
+            Rotate();
+            if (vf.listvisibletarget.Count != 0)
+            {
+                state = STATE.CHASE;
+            }
+        }
+        if (state == STATE.CHASE)
+        {
+            Chasing();
+        }
     }
 }

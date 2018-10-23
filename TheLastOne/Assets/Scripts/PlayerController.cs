@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     Vector2 mov;
     [Range(0, 20)]
     public float velocity;
-
     // Use this for initialization
     void Start()
     {
