@@ -55,9 +55,7 @@ public class VisualField : MonoBehaviour
         {
             angle += transform.eulerAngles.z;
         }
-        return new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad),
-                           Mathf.Sin(angle * Mathf.Deg2Rad),
-                           0);
+        return new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad),Mathf.Sin(angle * Mathf.Deg2Rad),0);
     }
 
     void Visible_Target()
@@ -78,7 +76,6 @@ public class VisualField : MonoBehaviour
                 }
             }
         }
-
     }
 
 
@@ -93,8 +90,7 @@ public class VisualField : MonoBehaviour
         }
         else
         {
-            return new InfoRC(false, new Vector3(transform.position.x, transform.position.y, 0)
-                                    + endRC * viewRadius, viewRadius, globalangle);
+            return new InfoRC(false, new Vector3(transform.position.x, transform.position.y, 0)+ endRC * viewRadius, viewRadius, globalangle);
         }
     }
     void DrawMesh()

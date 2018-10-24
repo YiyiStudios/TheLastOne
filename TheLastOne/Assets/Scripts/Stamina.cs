@@ -15,7 +15,11 @@ public class Stamina : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        imagelifebar.fillAmount = Mathf.InverseLerp(staminabar, 0, Time.fixedTime);
+        StaminaBar();
+    }
 
+    public void StaminaBar()
+    {
+        imagelifebar.fillAmount = Mathf.InverseLerp(staminabar, 0, Time.fixedTime);
     }
 }
