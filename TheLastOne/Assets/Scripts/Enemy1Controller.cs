@@ -37,7 +37,10 @@ public class Enemy1Controller : MonoBehaviour
     }
     void Chasing()
     {
-        transform.position = Vector2.MoveTowards(transform.position,vf.listvisibletarget[0].transform.position,Time.deltaTime*2);
+        if (vf.listvisibletarget.Capacity != 0)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, vf.listvisibletarget[0].transform.position, Time.deltaTime * 4);
+        }
     }
     void States()
     {
@@ -52,6 +55,10 @@ public class Enemy1Controller : MonoBehaviour
         if (state == STATE.CHASE)
         {
             Chasing();
+        }
+        if (vf.listvisibletarget.Count==0)
+        {
+            state = STATE.IDLE;
         }
     }
 }

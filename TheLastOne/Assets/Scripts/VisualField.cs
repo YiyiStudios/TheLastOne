@@ -62,19 +62,25 @@ public class VisualField : MonoBehaviour
     {
         listvisibletarget.Clear();
         listvisibletarget.Capacity = 0;
+        Debug.Log("NO DETECTADO ");
         Collider2D[] coll2D = Physics2D.OverlapCircleAll(transform.position, viewRadius, maskTarget);
-        for (int i = 0; i < coll2D.Length; i++)
+        if (coll2D != null)
         {
-            Transform objetive = coll2D[i].transform;
-            Vector2 vector_direction_objetive = (objetive.position - transform.position).normalized;
-            if (Vector2.Angle(transform.right, vector_direction_objetive) < viewAngle / 2)
+            for (int i = 0; i < coll2D.Length; i++)
             {
-                float distobjetive = Vector2.Distance(objetive.position, transform.position);
-                if (Physics2D.Raycast(transform.position, vector_direction_objetive, distobjetive, maskTarget))
+                Transform objetive = coll2D[i].transform;
+                Vector2 vector_direction_objetive = (objetive.position - transform.position).normalized;
+                if (Vector2.Angle(transform.right, vector_direction_objetive) < viewAngle / 2)
                 {
-                    listvisibletarget.Add(objetive);
+                    float distobjetive = Vector2.Distance(objetive.position, transform.position);
+                    if (Physics2D.Raycast(transform.position, vector_direction_objetive, distobjetive, maskTarget))
+                    {
+                        listvisibletarget.Add(objetive);
+                        Debug.Log("DETECTADO ");
+                    }
                 }
             }
+
         }
     }
 
@@ -126,6 +132,7 @@ public class VisualField : MonoBehaviour
         viewmesh.vertices = arrvertex;
         viewmesh.triangles = arrtriangles;
         viewmesh.triangles = viewmesh.triangles.Reverse().ToArray();
+    
     }
 }
 
