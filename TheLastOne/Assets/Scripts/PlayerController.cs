@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rg2;
-    public Vector2 mov;
+    Vector2 mov;
     [Range(0, 20)]
     public float velocity;
     // Use this for initialization
@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Movement_Update();
-
     }
     private void FixedUpdate()
     {

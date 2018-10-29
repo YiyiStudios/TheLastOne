@@ -249,29 +249,6 @@ Prefab:
       propertyPath: rotate
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 212931218752967076, guid: ba12974631a09a84b85061911c6165d8,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 4672374213228242, guid: ba12974631a09a84b85061911c6165d8, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4672374213228242, guid: ba12974631a09a84b85061911c6165d8, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114072709346177542, guid: ba12974631a09a84b85061911c6165d8,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 50302913197278042, guid: ba12974631a09a84b85061911c6165d8,
-        type: 2}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba12974631a09a84b85061911c6165d8, type: 2}
   m_IsPrefabParent: 0
@@ -1399,7 +1376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28e1f3ce905d9f428bbae7b67115248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOver: 0
 --- !u!4 &1967971152
 Transform:
   m_ObjectHideFlags: 0
@@ -1451,11 +1427,6 @@ Prefab:
     - target: {fileID: 4979788008307476, guid: 5b6b0ffc751cf4c4eb9e9fd65be59de7, type: 2}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 50848065400661078, guid: 5b6b0ffc751cf4c4eb9e9fd65be59de7,
-        type: 2}
-      propertyPath: m_BodyType
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b6b0ffc751cf4c4eb9e9fd65be59de7, type: 2}
