@@ -9,10 +9,12 @@ public class Stamina : MonoBehaviour {
 
     public int staminabar;
     public Image imagelifebar;
+    float time;
 
     // Use this for initialization
     void Start() {
         player = GetComponent<PlayerController>();
+        time = 1f;
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class Stamina : MonoBehaviour {
     {
         if (player.mov != Vector2.zero)
         {
-            imagelifebar.fillAmount = Mathf.InverseLerp(staminabar, 0, Time.fixedTime);
+            imagelifebar.fillAmount = Mathf.InverseLerp(staminabar, 0, time++);
         }
         if (imagelifebar.fillAmount != 0 && Input.GetKeyDown(KeyCode.K))
         {

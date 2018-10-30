@@ -62,7 +62,7 @@ public class VisualField : MonoBehaviour
     {
         listvisibletarget.Clear();
         listvisibletarget.Capacity = 0;
-        Debug.Log("NO DETECTADO ");
+
         Collider2D[] coll2D = Physics2D.OverlapCircleAll(transform.position, viewRadius, maskTarget);
         if (coll2D != null)
         {
@@ -76,7 +76,6 @@ public class VisualField : MonoBehaviour
                     if (Physics2D.Raycast(transform.position, vector_direction_objetive, distobjetive, maskTarget))
                     {
                         listvisibletarget.Add(objetive);
-                        Debug.Log("DETECTADO ");
                     }
                 }
             }
