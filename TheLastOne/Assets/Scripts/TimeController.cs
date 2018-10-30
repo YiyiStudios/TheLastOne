@@ -17,7 +17,7 @@ public class TimeController : MonoBehaviour
             {
                 turn_on = false;
             }
-        }
+        }Debug.Log(elapsedtime);
     }
     public void TurnOn()
     {
