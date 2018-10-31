@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
    
     Rigidbody2D rg2;
-  public  Vector2 mov;
+    public  Vector2 mov;
     [Range(0, 20)]
     public float velocity;
     // Use this for initialization
