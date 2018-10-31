@@ -36,14 +36,14 @@ public class ItemsController : MonoBehaviour
 
     void FirstButtonItem()
     {
-        
+        //ADD ITEM1
     }
     void SecondButtonItem()
     {
-
+        //ADDITEM2
     }
     void ThirdButtonItem()
     {
-
+        //ADDITEM3
     }
 }

@@ -1568,6 +1568,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &1714054896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1714054892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81fc3e3820fdda41837fa566ac2685e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 000000
+  slots:
+  - {fileID: 140226424}
+  - {fileID: 1196628712}
+  - {fileID: 2005772967}
 --- !u!4 &1714054897 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4409182544850336, guid: 6a360042c3c96d64f8a7c898898488b9,
