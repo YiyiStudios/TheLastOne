@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy1Controller : MonoBehaviour
-{ 
-    enum STATE {IDLE,CHASE }
+{
+    enum STATE { IDLE, CHASE }
     STATE state = STATE.IDLE;
     Vector3 a;
     public float rotate;
     TimeController time;
     VisualField vf;
+    public Transform player;
 
     // Use this for initialization
     void Start()
     {
+        player = player.GetComponent<Transform>();
         vf = GetComponent<VisualField>();
         time = gameObject.AddComponent<TimeController>();
         time.totaltime = 2f;
@@ -57,4 +59,13 @@ public class Enemy1Controller : MonoBehaviour
             Chasing();
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            player.position = new Vector3(0, 10, 0);
+        }
+    }
+
+
 }

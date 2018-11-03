@@ -259,6 +259,16 @@ Prefab:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 58115576797690458, guid: ba12974631a09a84b85061911c6165d8,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114072709346177542, guid: ba12974631a09a84b85061911c6165d8,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1714054897}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba12974631a09a84b85061911c6165d8, type: 2}
   m_IsPrefabParent: 0
@@ -1628,6 +1638,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1513290881033806, guid: 6a360042c3c96d64f8a7c898898488b9, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58168441612181598, guid: 6a360042c3c96d64f8a7c898898488b9, type: 2}
     - {fileID: 50908029975065088, guid: 6a360042c3c96d64f8a7c898898488b9, type: 2}
@@ -1983,6 +1997,16 @@ Prefab:
       propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 58821268301565648, guid: 5b6b0ffc751cf4c4eb9e9fd65be59de7,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114449327072270918, guid: 5b6b0ffc751cf4c4eb9e9fd65be59de7,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1714054897}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b6b0ffc751cf4c4eb9e9fd65be59de7, type: 2}
   m_IsPrefabParent: 0
