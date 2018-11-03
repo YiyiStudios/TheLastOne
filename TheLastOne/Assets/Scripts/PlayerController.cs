@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-   
+    Animator anim;
     Rigidbody2D rg2;
     public  Vector2 mov;
     [Range(0, 20)]
