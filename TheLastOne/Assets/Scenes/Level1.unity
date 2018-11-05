@@ -258,7 +258,8 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 21300002, guid: a6d8e0a8aec0cef428a532af117e2d4c,
+        type: 3}
     - target: {fileID: 58115576797690458, guid: ba12974631a09a84b85061911c6165d8,
         type: 2}
       propertyPath: m_IsTrigger
@@ -269,6 +270,21 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1714054897}
+    - target: {fileID: 212931218752967076, guid: ba12974631a09a84b85061911c6165d8,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212931218752967076, guid: ba12974631a09a84b85061911c6165d8,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212931218752967076, guid: ba12974631a09a84b85061911c6165d8,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba12974631a09a84b85061911c6165d8, type: 2}
   m_IsPrefabParent: 0
@@ -955,6 +971,29 @@ Transform:
   m_PrefabParentObject: {fileID: 4177675190096372, guid: d869b4a131cde6840b86e4a41d3b705b,
     type: 2}
   m_PrefabInternal: {fileID: 708828213}
+--- !u!1 &1156178520 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1562785957102656, guid: ba12974631a09a84b85061911c6165d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 118909347}
+--- !u!95 &1156178527
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1156178520}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7bed471916c95084194726674fcd7c32, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1196628712
 GameObject:
   m_ObjectHideFlags: 0
