@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour {
     void Start () {
         staminacontrol = GetComponent<Stamina>();
 
-        Debug.Log(Inventory_.instance.items.Count);
+      //  Debug.Log(Inventory_.instance.items.Count);
     }
 	
 	// Update is called once per frame

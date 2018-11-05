@@ -18,12 +18,12 @@ public class PlayerController : MonoBehaviour
     {
         rg2 = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        anim.SetTrigger("dowm");
     }
     // Update is called once per frame
     void Update()
     {
         Movement_Update();
+        Animation_States();
     }
     private void FixedUpdate()
     {
@@ -33,25 +33,19 @@ public class PlayerController : MonoBehaviour
     #region Movement
     void Movement_Update()
     {
-        mov = new Vector2(Input.GetAxisRaw("Horizontal"),
-                          Input.GetAxisRaw("Vertical"));
-
-    
-
-
-
-
+        mov = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
     void Movement_Fixed_Update()
     {
         rg2.MovePosition(rg2.position + mov * Time.deltaTime * velocity );
     }
     #endregion
-
-    void FlipHorizontal()
+    void Animation_States()
     {
-        Vector3 tl = transform.localScale;
-        tl *= -1;
-        transform.localScale = tl;
+        anim.SetFloat("Horizontal",mov.x);
+        anim.SetFloat("Vertical",mov.y);
+        anim.SetFloat("Magnitude",mov.magnitude);
     }
+
+
 }
