@@ -1086,6 +1086,16 @@ Prefab:
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114318009662453918, guid: 6a360042c3c96d64f8a7c898898488b9,
+        type: 2}
+      propertyPath: timetoreduction
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114318009662453918, guid: 6a360042c3c96d64f8a7c898898488b9,
+        type: 2}
+      propertyPath: staminabar
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a360042c3c96d64f8a7c898898488b9, type: 2}
   m_IsPrefabParent: 0

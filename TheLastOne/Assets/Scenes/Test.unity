@@ -347,7 +347,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1066198481}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -400, y: -211.43846, z: -13.864818}
+  m_LocalPosition: {x: -399.99997, y: -209.59691, z: -15.355085}
   m_LocalScale: {x: 1.3864818, y: 1.3864818, z: 1.3864818}
   m_Children: []
   m_Father: {fileID: 299314666}
@@ -670,6 +670,16 @@ Prefab:
       propertyPath: imagelifebar
       value: 
       objectReference: {fileID: 1397994892}
+    - target: {fileID: 114582109650016172, guid: fd83184549635204a82baaabe44a4aff,
+        type: 2}
+      propertyPath: staminabar
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114582109650016172, guid: fd83184549635204a82baaabe44a4aff,
+        type: 2}
+      propertyPath: timetoreduction
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fd83184549635204a82baaabe44a4aff, type: 2}
   m_IsPrefabParent: 0

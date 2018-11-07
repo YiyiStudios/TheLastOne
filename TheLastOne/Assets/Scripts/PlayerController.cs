@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     void Movement_Update()
     {
         mov = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-       
+
     }
     void Movement_Fixed_Update()
     {

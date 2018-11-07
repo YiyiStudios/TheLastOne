@@ -57,6 +57,10 @@ public class Enemy1Controller : MonoBehaviour
         if (state == STATE.CHASE)
         {
             Chasing();
+            if (vf.listvisibletarget.Count == 0)
+            {
+                state = STATE.IDLE;
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
