@@ -17,14 +17,13 @@ public class VisualField : MonoBehaviour
     public float meshResolution;
     Mesh viewmesh;
     public MeshFilter viewMeshFilter;
-
-
+    [Range(0,5)]
+    public int sortingorder;
     private void Start()
     {
         viewmesh = new Mesh();
         viewmesh.name = "View Mesh";
         viewMeshFilter.mesh = viewmesh;
-
     }
 
 
