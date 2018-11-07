@@ -2,22 +2,56 @@
 using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
 
 public class NewTestScript {
 
     // A UnityTest behaves like a coroutine in PlayMode
     // and allows you to yield null to skip a frame in EditMode
     [UnityTest]
-    public IEnumerator StaminaTestSimplePasses()
+    public IEnumerator TestSceneLoading()
     {
-        // Use the Assert class to test conditions.
-        SetUpScene();
-        yield return new WaitForSeconds(5f);
+        Scene testScene = SceneManager.GetActiveScene();
+        yield return SceneManager.LoadSceneAsync("Test", LoadSceneMode.Additive);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Test"));
+        Assert.IsTrue(SceneManager.GetActiveScene().name == "Test");
+        SceneManager.UnloadSceneAsync("Test");
+        yield return SceneManager.SetActiveScene(testScene);
     }
-    void SetUpScene()
+    [UnityTest]
+    public IEnumerator MovementPlayerX()
     {
-        MonoBehaviour.Instantiate(Resources.Load<GameObject>("Player"));
-        MonoBehaviour.Instantiate(Resources.Load<GameObject>("Canvas1"));
-        MonoBehaviour.Instantiate(Resources.Load<GameObject>("CMvcam1"));
+        Scene scene = SceneManager.GetActiveScene();
+        yield return SceneManager.LoadSceneAsync("Test", LoadSceneMode.Additive);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Test"));
+        yield return new WaitForSeconds(2f);
+        Vector2 mov = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
+        Assert.IsTrue(mov.x == 1);
     }
+    [UnityTest]
+    public IEnumerator MovementPlayerY()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        yield return SceneManager.LoadSceneAsync("Test", LoadSceneMode.Additive);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Test"));
+        yield return new WaitForSeconds(2f);
+        Vector2 mov = new Vector2(0, Input.GetAxisRaw("Vertical"));
+        Assert.IsTrue(mov.y == 1);
+    }
+    [UnityTest]
+    public IEnumerator MovementPlayerXYPositive()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        yield return SceneManager.LoadSceneAsync("Test", LoadSceneMode.Additive);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Test"));
+        yield return new WaitForSeconds(2f);
+        Vector2 mov = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Assert.IsTrue(mov==Vector2.one);
+    }
+
+
+
+
+
 }
