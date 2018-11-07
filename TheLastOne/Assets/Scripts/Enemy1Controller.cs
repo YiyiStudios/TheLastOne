@@ -11,6 +11,8 @@ public class Enemy1Controller : MonoBehaviour
     TimeController time;
     VisualField vf;
     public Transform player;
+    [Range(1f,20f)]
+    public float velocity;
 
     // Use this for initialization
     void Start()
@@ -41,7 +43,7 @@ public class Enemy1Controller : MonoBehaviour
     {
         if (vf.listvisibletarget.Count != 0)
         {
-            transform.position = Vector2.MoveTowards(transform.position, vf.listvisibletarget[0].transform.position, Time.deltaTime * 2);
+            transform.position = Vector2.MoveTowards(transform.position, vf.listvisibletarget[0].transform.position, Time.deltaTime *velocity);
         }
     }
     void States()
@@ -67,7 +69,7 @@ public class Enemy1Controller : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            player.position = new Vector3(0, 10, 0);
+            player.position = new Vector3(5.65f, 2.5f, 0);
         }
     }
 

@@ -17,8 +17,6 @@ public class VisualField : MonoBehaviour
     public float meshResolution;
     Mesh viewmesh;
     public MeshFilter viewMeshFilter;
-    [Range(0,5)]
-    public int sortingorder;
     private void Start()
     {
         viewmesh = new Mesh();
@@ -69,7 +67,7 @@ public class VisualField : MonoBehaviour
             if (Vector2.Angle(transform.right, vector_direction_objetive) < viewAngle / 2)
             {
                 float distobjetive = Vector2.Distance(objetive.position, transform.position);
-                if (Physics2D.Raycast(transform.position, vector_direction_objetive, distobjetive, maskTarget))
+                if (!Physics2D.Raycast(transform.position, vector_direction_objetive, distobjetive, maskObstacle))
                 {
                     listvisibletarget.Add(objetive);
                 }
