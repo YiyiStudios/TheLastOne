@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114635096583680898}
   - component: {fileID: 50302913197278042}
   - component: {fileID: 58115576797690458}
+  - component: {fileID: 95843314461198446}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1562785957102656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.55, y: -0.05, z: 0}
+  m_LocalPosition: {x: -4.64, y: 15.48, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 4952021928230770}
@@ -124,7 +125,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1562785957102656}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -146,12 +147,30 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.08
+--- !u!95 &95843314461198446
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1562785957102656}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7bed471916c95084194726674fcd7c32, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114072709346177542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,6 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3829963d06835c34b93e9a75d010da3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotate: 90
+  player: {fileID: 0}
 --- !u!114 &114635096583680898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,7 +203,7 @@ MonoBehaviour:
   maskObstacle:
     serializedVersion: 2
     m_Bits: 512
-  visibleTarget: []
+  listvisibletarget: []
   meshResolution: 1
   viewMeshFilter: {fileID: 33559649755115954}
 --- !u!212 &212931218752967076
@@ -220,8 +241,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.4009434, b: 0.4009434, a: 1}
+  m_Sprite: {fileID: 21300002, guid: a6d8e0a8aec0cef428a532af117e2d4c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
