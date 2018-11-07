@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         Movement_Update();
         Animation_States();
+        Interactions();
     }
     private void FixedUpdate()
     {
@@ -47,6 +49,20 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Vertical",mov.y);
         anim.SetFloat("Magnitude",mov.magnitude);
     }
+
+    void Interactions()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+        if(Input.GetKeyDown(KeyCode.Backspace))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        } 
+
+    }
+
 
 
 }
