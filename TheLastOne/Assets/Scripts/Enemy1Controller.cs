@@ -9,7 +9,9 @@ public class Enemy1Controller : MonoBehaviour
     Vector3 torotate;
     public float rotate;
     TimeController time;
+  public  GameObject objvf;
     VisualField vf;
+
     public Transform player;
     [Range(1f, 20f)]
     public float velocity;
@@ -22,7 +24,8 @@ public class Enemy1Controller : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         player = player.GetComponent<Transform>();
-        vf = GetComponent<VisualField>();
+        vf = objvf.GetComponent<VisualField>();
+     // vf = GetComponentInChildren<VisualField>();
         time = gameObject.AddComponent<TimeController>();
         time.totaltime = 1.3f;
         time.TurnOn();
@@ -100,18 +103,22 @@ public class Enemy1Controller : MonoBehaviour
             case 0:
                 anim.SetFloat("Horizontal", 1);
                 anim.SetFloat("Vertical", 0);
+                //vf.viewAngle = vf.viewAngle + 45;
                 break;
             case 1:
                 anim.SetFloat("Horizontal", 0);
                 anim.SetFloat("Vertical", 1);
+              //  vf.viewAngle = vf.viewAngle + 90;
                 break;
             case 2:
                 anim.SetFloat("Horizontal", -1);
                 anim.SetFloat("Vertical", 0);
+               // vf.viewAngle = vf.viewAngle + 180;
                 break;
             case 3:
                 anim.SetFloat("Horizontal", 0);
                 anim.SetFloat("Vertical", -1);
+              //  vf.viewAngle = vf.viewAngle + 270;
                 break;
 
         }
