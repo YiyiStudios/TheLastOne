@@ -26,7 +26,7 @@ public class Enemy1Controller : MonoBehaviour
         player = player.GetComponent<Transform>();
         vf = objvf.GetComponent<VisualField>();
         time = gameObject.AddComponent<TimeController>();
-        time.totaltime = 1.3f;
+        time.totaltime = 1f;
         time.TurnOn();
         torotate.z = transform.rotation.eulerAngles.z;
     }
@@ -34,23 +34,21 @@ public class Enemy1Controller : MonoBehaviour
     void Update()
     {
         States();
-        //       Animation_States();
     }
     void Rotate()
     {
         if (time.Finished())
         {
             time.Run();
-            //  torotate.z += rotate;
-            //  transform.rotation = Quaternion.Euler(torotate);
             AnimationRotate();
             time.TurnOn();
         }
-
-
     }
     void Chasing()
     {
+        anim.SetFloat("Vertical", DirectionVector().y);
+        anim.SetFloat("Horizontal", DirectionVector().x);
+        anim.SetFloat("Magnitude", DirectionVector().magnitude);
         if (vf.listvisibletarget.Count != 0)
         {
             transform.position = Vector2.MoveTowards(transform.position, vf.listvisibletarget[0].transform.position, Time.deltaTime * velocity);
@@ -72,6 +70,7 @@ public class Enemy1Controller : MonoBehaviour
             if (vf.listvisibletarget.Count == 0)
             {
                 states = state.idle;
+                anim.SetFloat("Magnitude", 0);
             }
         }
     }
@@ -102,29 +101,23 @@ public class Enemy1Controller : MonoBehaviour
             case 0:
                 anim.SetFloat("Horizontal", 1);
                 anim.SetFloat("Vertical", 0);
-                vf.transform.Rotate(new Vector3(0,0,0));
-                //vf.viewAngle = vf.viewAngle + 45;
+                vf.transform.rotation=Quaternion.Euler(0,0,0);
                 break;
             case 1:
                 anim.SetFloat("Horizontal", 0);
                 anim.SetFloat("Vertical", 1);
-                vf.transform.Rotate(new Vector3(0, 0, 90));
-                //  vf.viewAngle = vf.viewAngle + 90;
+                vf.transform.rotation = Quaternion.Euler(0, 0, 90);
                 break;
             case 2:
                 anim.SetFloat("Horizontal", -1);
                 anim.SetFloat("Vertical", 0);
-                vf.transform.Rotate(new Vector3(0, 0, 180));
-            //    vf.transform.rotation(Quaternion.Euler);
-                // vf.viewAngle = vf.viewAngle + 180;
+                vf.transform.rotation = Quaternion.Euler(0, 0, 180);
                 break;
             case 3:
                 anim.SetFloat("Horizontal", 0);
                 anim.SetFloat("Vertical", -1);
-         vf.transform.Rotate(new Vector3(0, 0, 270));
-                //  vf.viewAngle = vf.viewAngle + 270;
+                vf.transform.rotation = Quaternion.Euler(0, 0, 270);
                 break;
-
         }
         contanim++;
         if (contanim >= 4) { contanim = 0; }
