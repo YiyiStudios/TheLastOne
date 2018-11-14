@@ -5,11 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    enum STATE { walkright,walkleft,walkUP,walkdown,idleup}
+//    enum state { walkright,walkleft,walkUP,walkdown,idleup}
 //    STATE state = STATE.DOWN;
-
     Animator anim;
-    public bool isright=false;
     Rigidbody2D rg2;
     public  Vector2 mov;
     [Range(0, 20)]
@@ -23,46 +21,29 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement_Update();
-        Animation_States();
-        Interactions();
+        MovementUpdate();
+        AnimationStates();    
     }
     private void FixedUpdate()
     {
-        Movement_Fixed_Update();
+        MovementFixedUpdate();
     }
-
     #region Movement
-    void Movement_Update()
+    void MovementUpdate()
     {
-        mov = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        mov = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
     }
-    void Movement_Fixed_Update()
+    void MovementFixedUpdate()
     {
         rg2.MovePosition(rg2.position + mov * Time.deltaTime * velocity );
     }
     #endregion
-    void Animation_States()
+    void AnimationStates()
     {
         anim.SetFloat("Horizontal",mov.x);
         anim.SetFloat("Vertical",mov.y);
         anim.SetFloat("Magnitude",mov.magnitude);
     }
-
-    void Interactions()
-    {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-        if(Input.GetKeyDown(KeyCode.Backspace))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        } 
-
-    }
-
-
 
 }

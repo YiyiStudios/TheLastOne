@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
 
     Stamina staminacontrol;
 
@@ -24,19 +25,38 @@ public class GameController : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         staminacontrol = GetComponent<Stamina>();
 
         //Debug.Log(Inventory_.instance.items.Count);
     }
-	
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update()
+    {
+        ResetScene();
+        QuitGame();
+        BackScene();
+    }
+    private void ResetScene()
+    {
         if (Input.GetKey(KeyCode.Space))
         {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);     
-        }	
-	}
-
-    
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+    private void QuitGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+    private void BackScene()
+    {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+    }
 }

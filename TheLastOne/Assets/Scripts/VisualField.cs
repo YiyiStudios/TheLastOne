@@ -28,7 +28,7 @@ public class VisualField : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-       Visible_Target();
+       VisibleTarget();
         DrawMesh();
     }
 
@@ -46,7 +46,7 @@ public class VisualField : MonoBehaviour
             angle = _angle;
         }
     }
-    public Vector3 Vector_Direction_Line(float angle, bool globalangle)
+    public Vector3 VectorDirectionLine(float angle, bool globalangle)
     {
         if (!globalangle)
         {
@@ -55,7 +55,7 @@ public class VisualField : MonoBehaviour
         return new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad),Mathf.Sin(angle * Mathf.Deg2Rad),0);
     }
 
-    void Visible_Target()
+    void VisibleTarget()
     {
         listvisibletarget.Clear();
         listvisibletarget.Capacity = 0;
@@ -63,11 +63,11 @@ public class VisualField : MonoBehaviour
         for (int i = 0; i < coll2D.Length; i++)
         {
             Transform objetive = coll2D[i].transform;
-            Vector2 vector_direction_objetive = (objetive.position - transform.position).normalized;
-            if (Vector2.Angle(transform.right, vector_direction_objetive) < viewAngle / 2)
+            Vector2 vectordirectionobjetive = (objetive.position - transform.position).normalized;
+            if (Vector2.Angle(transform.right, vectordirectionobjetive) < viewAngle / 2)
             {
                 float distobjetive = Vector2.Distance(objetive.position, transform.position);
-                if (!Physics2D.Raycast(transform.position, vector_direction_objetive, distobjetive, maskObstacle))
+                if (!Physics2D.Raycast(transform.position, vectordirectionobjetive, distobjetive, maskObstacle))
                 {
                     listvisibletarget.Add(objetive);
                 }
@@ -78,7 +78,7 @@ public class VisualField : MonoBehaviour
 
     public InfoRC ConstraintsRC(float globalangle)
     {
-        Vector3 endRC = Vector_Direction_Line(globalangle, true);
+        Vector3 endRC = VectorDirectionLine(globalangle, true);
         RaycastHit2D rc = Physics2D.Raycast(transform.position, endRC, viewRadius, maskObstacle);
         if (rc)
         {
@@ -93,12 +93,12 @@ public class VisualField : MonoBehaviour
     void DrawMesh()
     {
         int resolution = Mathf.RoundToInt(viewAngle * meshResolution);
-        float angular_distance_rc = viewAngle / resolution;
+        float angulardistancerc = viewAngle / resolution;
         List<Vector2> listvertex = new List<Vector2>();
 
         for (int i = 0; i <= resolution; i++)
         {
-            float angle = transform.eulerAngles.z - viewAngle / 2 + angular_distance_rc * i;
+            float angle = transform.eulerAngles.z - viewAngle / 2 + angulardistancerc * i;
             InfoRC vertexinfo = ConstraintsRC(angle);
             listvertex.Add(vertexinfo.point);
 
