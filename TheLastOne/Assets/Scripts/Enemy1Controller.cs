@@ -7,24 +7,22 @@ public class Enemy1Controller : MonoBehaviour
     enum state { idle, chase }
     state states = state.idle;
     Vector3 torotate;
-    public float rotate;
+    [SerializeField] private float rotate;
     TimeController time;
     public GameObject objvf;
+    public Transform objdetector;
     VisualField vf;
-
-    public Transform player;
-    [Range(1f, 20f)]
-    public float velocity;
+    [SerializeField] Transform player;
+    [Range(1f, 20f)] [SerializeField] private float velocity;
     Animator anim;
-    int contanim = 0;
-
-
+    private int contanim = 0;
     // Use this for initialization
     void Start()
     {
         anim = GetComponent<Animator>();
         player = player.GetComponent<Transform>();
         vf = objvf.GetComponent<VisualField>();
+        objdetector = objdetector.GetComponent<Transform>();
         time = gameObject.AddComponent<TimeController>();
         time.totaltime = 1f;
         time.TurnOn();
@@ -74,20 +72,10 @@ public class Enemy1Controller : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            player.position = new Vector3(5.65f, 2.5f, 0);
-        }
-    }
-
     Vector2 DirectionVector()
     {
         return (player.position - transform.position).normalized;
     }
-
-
     void Animation_States(Vector2 mov)
     {
         anim.SetFloat("Horizontal", mov.x);
@@ -101,22 +89,34 @@ public class Enemy1Controller : MonoBehaviour
             case 0:
                 anim.SetFloat("Horizontal", 1);
                 anim.SetFloat("Vertical", 0);
-                vf.transform.rotation=Quaternion.Euler(0,0,0);
+                vf.transform.rotation = Quaternion.Euler(0, 0, 0);
+                objdetector.position =transform.localPosition + new Vector3(0.14f, 0.15f,0);
+                objdetector.rotation = Quaternion.Euler(0, 0, 90);
+                Debug.Log("Derecha");
                 break;
             case 1:
                 anim.SetFloat("Horizontal", 0);
                 anim.SetFloat("Vertical", 1);
                 vf.transform.rotation = Quaternion.Euler(0, 0, 90);
+                objdetector.rotation = Quaternion.Euler(0, 0, 180);
+                objdetector.position = transform.localPosition + new Vector3(0, 0.38f, 0);
+                Debug.Log("Arriba");
                 break;
             case 2:
                 anim.SetFloat("Horizontal", -1);
                 anim.SetFloat("Vertical", 0);
                 vf.transform.rotation = Quaternion.Euler(0, 0, 180);
+                objdetector.rotation = Quaternion.Euler(0, 0, 270);
+                objdetector.position = transform.localPosition + new Vector3(-0.14f, 0.15f, 0);
+                Debug.Log("Izquierda");
                 break;
             case 3:
                 anim.SetFloat("Horizontal", 0);
                 anim.SetFloat("Vertical", -1);
                 vf.transform.rotation = Quaternion.Euler(0, 0, 270);
+                objdetector.rotation = Quaternion.Euler(0, 0, 0);
+                objdetector.position = transform.localPosition + new Vector3(0, -0.048f, 0);
+                Debug.Log("Abajo");
                 break;
         }
         contanim++;

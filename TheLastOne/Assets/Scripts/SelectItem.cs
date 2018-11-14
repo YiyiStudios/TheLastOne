@@ -26,7 +26,7 @@ public class SelectItem : MonoBehaviour {
 
         if (!item.state)
         {
-            Inventory_.instance.Add(item);
+            InventoryController.instance.Add(item);
             item.state = true;
         }
         else

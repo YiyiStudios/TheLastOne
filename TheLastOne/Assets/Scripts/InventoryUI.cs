@@ -4,22 +4,22 @@ public class InventoryUI : MonoBehaviour {
 
     public Transform itemsParent;
 
-    Inventory_ inventory;
+    InventoryController inventory;
 
     InventorySlot[] slots;
 
 	// Use this for initialization
 	void Start () {
 
-        inventory = Inventory_.instance;
+        inventory = InventoryController.instance;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
 
 
-            for (int i = 0; i < inventory.items.Count; i++)
-            {
-                slots[i].AddItem(inventory.items[i]);
-            }
+           for (int i = 0; i < inventory.items.Count; i++)
+           {
+               slots[i].AddItem(inventory.items[i]);
+           }
         
 	}
 	

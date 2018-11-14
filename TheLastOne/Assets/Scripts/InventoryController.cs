@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory_ : MonoBehaviour {
+public class InventoryController : MonoBehaviour {
 
-    public static Inventory_ instance;
-
+    public static InventoryController instance;
     void Awake ()
     {
         if (instance != null)
@@ -13,11 +12,8 @@ public class Inventory_ : MonoBehaviour {
         
         instance = this;
     }
-
     public int space = 5;
-
     public List<Item> items = new List<Item>();
-
     public void Add (Item item)
     {
         if (items.Count >= space)
@@ -28,12 +24,8 @@ public class Inventory_ : MonoBehaviour {
 
         items.Add(item);
     }
-
     public void Remove (Item item)
     {
         items.Remove(item);
     }
-
-
-
 }

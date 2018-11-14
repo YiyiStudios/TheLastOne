@@ -5,18 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-//    enum state { walkright,walkleft,walkUP,walkdown,idleup}
-//    STATE state = STATE.DOWN;
+    //    enum state { walkright,walkleft,walkUP,walkdown,idleup}
+    //    STATE state = STATE.DOWN;
+    // enum stateScenes { level1,level2,level3,level4}
+    // [SerializeField]
+    // stateScenes statescene ;
+
+    public static Vector3 initialPosition;
+    [SerializeField]
+    private Vector3 initialposition;
+
     Animator anim;
     Rigidbody2D rg2;
     public  Vector2 mov;
     [Range(0, 20)]
     public float velocity;
+
     // Use this for initialization
     void Start()
     {
         rg2 = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        initialPosition = initialposition;
+        transform.position = initialPosition;
     }
     // Update is called once per frame
     void Update()

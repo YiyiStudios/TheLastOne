@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-
-    Stamina staminacontrol;
-
     GameController instance;
     public string scenename;
 
@@ -27,7 +24,6 @@ public class GameController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        staminacontrol = GetComponent<Stamina>();
 
         //Debug.Log(Inventory_.instance.items.Count);
     }
