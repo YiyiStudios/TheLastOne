@@ -6,7 +6,6 @@ public class Enemy1Controller : MonoBehaviour
 {
     enum state { idle, chase }
     state states = state.idle;
-    Vector3 torotate;
     [SerializeField] private float rotate;
     TimeController time;
     public GameObject objvf;
@@ -16,6 +15,8 @@ public class Enemy1Controller : MonoBehaviour
     [Range(1f, 20f)] [SerializeField] private float velocity;
     Animator anim;
     private int contanim = 0;
+    [HideInInspector]
+    public Vector3 initialposition;
     // Use this for initialization
     void Start()
     {
@@ -26,7 +27,7 @@ public class Enemy1Controller : MonoBehaviour
         time = gameObject.AddComponent<TimeController>();
         time.totaltime = 1f;
         time.TurnOn();
-        torotate.z = transform.rotation.eulerAngles.z;
+        initialposition = transform.position;
     }
     // Update is called once per frame
     void Update()
@@ -90,7 +91,7 @@ public class Enemy1Controller : MonoBehaviour
                 anim.SetFloat("Horizontal", 1);
                 anim.SetFloat("Vertical", 0);
                 vf.transform.rotation = Quaternion.Euler(0, 0, 0);
-                objdetector.position =transform.localPosition + new Vector3(0.65f,0.75f,0);
+                objdetector.position = transform.localPosition + new Vector3(0.65f, 0.75f, 0);
                 objdetector.rotation = Quaternion.Euler(0, 0, 90);
                 break;
             case 1:
