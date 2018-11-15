@@ -8,9 +8,7 @@ public class SelectItem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-        item.state = false;
-		
+     item.state = false;
 	}
 	
 	// Update is called once per frame

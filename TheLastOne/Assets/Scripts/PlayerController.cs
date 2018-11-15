@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     Animator anim;
     Rigidbody2D rg2;
-    public  Vector2 mov;
+    public static Vector2 mov;
     [Range(0, 20)]
     public float velocity;
 

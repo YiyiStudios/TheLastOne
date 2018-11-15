@@ -14,3 +14,4 @@ MonoBehaviour:
   name: Cake
   icon: {fileID: 21300000, guid: 98a58e01ddab0a8439de906056f2cdb1, type: 3}
   isDefaultItem: 0
+  state: 0

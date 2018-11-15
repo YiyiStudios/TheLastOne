@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     GameController instance;
     public string scenename;
-
+  public  GameObject staminabarinstance;
+//  public  StaminaController staminaCtrl;
     private void Awake()
     {
         if (instance == null)
@@ -24,7 +26,7 @@ public class GameController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+       // staminabarinstance = staminabarinstance.GetComponent<StaminaController>();
         //Debug.Log(Inventory_.instance.items.Count);
     }
     // Update is called once per frame
@@ -38,6 +40,7 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
+            staminabarinstance.GetComponent<Image>().fillAmount =staminabarinstance.GetComponent<StaminaController>().staminabar;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

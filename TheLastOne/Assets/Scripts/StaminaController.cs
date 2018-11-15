@@ -25,7 +25,7 @@ public class StaminaController : MonoBehaviour
     }
     public void StaminaBar()
     {
-        if (playercontrol.mov != Vector2.zero)
+        if (PlayerController.mov != Vector2.zero)
         {
             imagelifebar.fillAmount = Mathf.InverseLerp(staminabar, 0, reduction);
             elapsedtime += Time.deltaTime;
@@ -34,10 +34,6 @@ public class StaminaController : MonoBehaviour
                 reduction++;
                 elapsedtime = time;
             }
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            imagelifebar.fillAmount = staminabar;
         }
     }
 }

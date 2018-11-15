@@ -14,3 +14,4 @@ MonoBehaviour:
   name: Clock
   icon: {fileID: 21300000, guid: 9d525296885017644955990a97b4d76b, type: 3}
   isDefaultItem: 0
+  state: 0

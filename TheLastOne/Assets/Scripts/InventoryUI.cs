@@ -15,12 +15,14 @@ public class InventoryUI : MonoBehaviour {
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
 
-
-           for (int i = 0; i < inventory.items.Count; i++)
-           {
-               slots[i].AddItem(inventory.items[i]);
-           }
-        
+        if (inventory.items.Count != 0)
+        {
+            for (int i = 0; i < inventory.items.Count; i++)
+            {
+                slots[i].AddItem(inventory.items[i]);
+            }
+        }
+    
 	}
 	
 	// Update is called once per frame
