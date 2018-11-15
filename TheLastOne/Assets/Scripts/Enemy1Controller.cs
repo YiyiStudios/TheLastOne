@@ -90,33 +90,29 @@ public class Enemy1Controller : MonoBehaviour
                 anim.SetFloat("Horizontal", 1);
                 anim.SetFloat("Vertical", 0);
                 vf.transform.rotation = Quaternion.Euler(0, 0, 0);
-                objdetector.position =transform.localPosition + new Vector3(0.14f, 0.15f,0);
+                objdetector.position =transform.localPosition + new Vector3(0.65f,0.75f,0);
                 objdetector.rotation = Quaternion.Euler(0, 0, 90);
-                Debug.Log("Derecha");
                 break;
             case 1:
                 anim.SetFloat("Horizontal", 0);
                 anim.SetFloat("Vertical", 1);
                 vf.transform.rotation = Quaternion.Euler(0, 0, 90);
                 objdetector.rotation = Quaternion.Euler(0, 0, 180);
-                objdetector.position = transform.localPosition + new Vector3(0, 0.38f, 0);
-                Debug.Log("Arriba");
+                objdetector.position = transform.localPosition + new Vector3(0, 1.8f, 0);
                 break;
             case 2:
                 anim.SetFloat("Horizontal", -1);
                 anim.SetFloat("Vertical", 0);
                 vf.transform.rotation = Quaternion.Euler(0, 0, 180);
                 objdetector.rotation = Quaternion.Euler(0, 0, 270);
-                objdetector.position = transform.localPosition + new Vector3(-0.14f, 0.15f, 0);
-                Debug.Log("Izquierda");
+                objdetector.position = transform.localPosition + new Vector3(-0.8f, 0.75f, 0);
                 break;
             case 3:
                 anim.SetFloat("Horizontal", 0);
                 anim.SetFloat("Vertical", -1);
                 vf.transform.rotation = Quaternion.Euler(0, 0, 270);
                 objdetector.rotation = Quaternion.Euler(0, 0, 0);
-                objdetector.position = transform.localPosition + new Vector3(0, -0.048f, 0);
-                Debug.Log("Abajo");
+                objdetector.position = transform.localPosition + new Vector3(0, -0.34f, 0);
                 break;
         }
         contanim++;

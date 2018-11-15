@@ -7,7 +7,7 @@ using System.Linq;
 public class VisualField : MonoBehaviour
 {
     public float viewAngle;
-    public int viewRadius;
+    public float viewRadius;
 
     public LayerMask maskTarget;
     public LayerMask maskObstacle;
