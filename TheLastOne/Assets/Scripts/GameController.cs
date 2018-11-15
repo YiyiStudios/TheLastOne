@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     GameController instance;
-    public string scenename;
-  public  GameObject staminabarinstance;
+    public string nextlevel;
+ 
+    public  GameObject staminabarinstance;
 //  public  StaminaController staminaCtrl;
     private void Awake()
     {
@@ -58,4 +59,12 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+     SceneManager.LoadScene(nextlevel);
+        }
+    }
+
 }

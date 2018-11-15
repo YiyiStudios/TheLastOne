@@ -3342,7 +3342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28e1f3ce905d9f428bbae7b67115248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenename: Scene2
+  scenename: Level1
+  nextlevel: Level2
   staminabarinstance: {fileID: 652963372}
 --- !u!4 &1967971152
 Transform:
@@ -3366,7 +3367,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
