@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     Animator anim;
     Rigidbody2D rg2;
+    Vector2 idleanim;
     public static Vector2 mov;
     [Range(0, 20)]
     public float velocity;
@@ -28,10 +29,12 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         initialPosition = initialposition;
         transform.position = initialPosition;
+        anim.SetFloat("Vertical", -1);
+
     }
     // Update is called once per frame
     void Update()
-    {
+    {   
         MovementUpdate();
         AnimationStates();    
     }
@@ -52,9 +55,18 @@ public class PlayerController : MonoBehaviour
     #endregion
     void AnimationStates()
     {
-        anim.SetFloat("Horizontal",mov.x);
-        anim.SetFloat("Vertical",mov.y);
-        anim.SetFloat("Magnitude",mov.magnitude);
+        if (mov != Vector2.zero)
+        {
+            anim.SetFloat("Horizontal", mov.x);
+            anim.SetFloat("Vertical", mov.y);
+            anim.SetFloat("Magnitude", mov.magnitude);
+            idleanim = mov;
+        }
+        else
+        {
+            anim.SetFloat("Horizontal", idleanim.x);
+            anim.SetFloat("Vertical", idleanim.y);
+            anim.SetFloat("Magnitude", mov.magnitude);
+        }
     }
-
 }
