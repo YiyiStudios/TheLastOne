@@ -118,6 +118,26 @@ GameObject:
   m_PrefabParentObject: {fileID: 1192005718959480, guid: 75a90cf8b88cae3419d058d8ed23bc35,
     type: 2}
   m_PrefabInternal: {fileID: 710101786}
+--- !u!1 &257513535 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1345776950370958, guid: 92e07482093c44642bfa1bdfb6372e49,
+    type: 2}
+  m_PrefabInternal: {fileID: 1074148492}
+--- !u!114 &257513542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 257513535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c5c0596783a8247a313656b6da7cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  vf: {fileID: 0}
+  objdetector: {fileID: 0}
+  contanim: 0
 --- !u!1001 &258801052
 Prefab:
   m_ObjectHideFlags: 0
@@ -731,7 +751,7 @@ Prefab:
     - target: {fileID: 114783171658069468, guid: 74dac71993cf59f4a98ee2fe9da26c5b,
         type: 2}
       propertyPath: velocity
-      value: 5
+      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74dac71993cf59f4a98ee2fe9da26c5b, type: 2}
@@ -877,6 +897,7 @@ MonoBehaviour:
   player: {fileID: 1714054897}
   velocity: 7
   initialposition: {x: 0, y: 0, z: 0}
+  kindenemy: 1
 --- !u!212 &1820051241
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -913,7 +934,7 @@ SpriteRenderer:
   m_SortingLayerID: -365850527
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300110, guid: 37791d7a71d79494891c42d9a7565d10, type: 3}
+  m_Sprite: {fileID: 21300020, guid: 37791d7a71d79494891c42d9a7565d10, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
