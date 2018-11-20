@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     GameController instance;
     public string nextlevel;
  
-    public  GameObject staminabarinstance;
+    public  Image staminabarinstance;
 //  public  StaminaController staminaCtrl;
     private void Awake()
     {
@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-       // staminabarinstance = staminabarinstance.GetComponent<StaminaController>();
+        staminabarinstance = staminabarinstance.GetComponent<Image>();
         //Debug.Log(Inventory_.instance.items.Count);
     }
     // Update is called once per frame
@@ -35,7 +35,10 @@ public class GameController : MonoBehaviour
     {
         ResetScene();
         QuitGame();
-        BackScene();
+        Menu();
+        Level1();
+        Level2();
+        GameOver();
     }
     private void ResetScene()
     {
@@ -52,11 +55,25 @@ public class GameController : MonoBehaviour
             Application.Quit();
         }
     }
-    private void BackScene()
+    private void Menu()
+    {
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            SceneManager.LoadScene("Menu");
+        }
+    }
+    private void Level1()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            SceneManager.LoadScene("Level1");
+        }
+    }
+    private void Level2()
     {
         if (Input.GetKeyDown(KeyCode.O))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            SceneManager.LoadScene("Level2");
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -64,6 +81,14 @@ public class GameController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
      SceneManager.LoadScene(nextlevel);
+        }
+    }
+    void GameOver()
+    {
+       if(staminabarinstance.fillAmount <= 0f)
+        {
+            staminabarinstance.GetComponent<Image>().fillAmount = staminabarinstance.GetComponent<StaminaController>().staminabar;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 

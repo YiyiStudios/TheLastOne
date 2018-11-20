@@ -9,18 +9,18 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1114213907395380}
+  m_RootGameObject: {fileID: 1916071808006570}
   m_IsPrefabParent: 1
---- !u!1 &1114213907395380
+--- !u!1 &1916071808006570
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4378715023028406}
-  - component: {fileID: 114438540965744280}
-  - component: {fileID: 82449885270099610}
+  - component: {fileID: 4791925897705632}
+  - component: {fileID: 114820712279880124}
+  - component: {fileID: 82058190115656096}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -28,12 +28,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4378715023028406
+--- !u!4 &4791925897705632
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1114213907395380}
+  m_GameObject: {fileID: 1916071808006570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.4661565, y: 5.4652476, z: -0.06210097}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -41,12 +41,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82449885270099610
+--- !u!82 &82058190115656096
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1114213907395380}
+  m_GameObject: {fileID: 1916071808006570}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -136,12 +136,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114438540965744280
+--- !u!114 &114820712279880124
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1114213907395380}
+  m_GameObject: {fileID: 1916071808006570}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ac364b603ca18e418d3b91b5762e39c, type: 3}
@@ -149,4 +149,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinClip: {fileID: 8300000, guid: 5ac6242608b593342802f2c42954d298, type: 3}
   backgroundAudioSource: {fileID: 0}
-  soundAudioSource: {fileID: 82449885270099610}
+  soundAudioSource: {fileID: 82058190115656096}
