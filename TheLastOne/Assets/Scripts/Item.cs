@@ -36,9 +36,7 @@ public class Item : ScriptableObject {
 
     public void UseKey()
     {
-
         Debug.Log("Using: " + name);
-
     }
 
     public void UseCake()
@@ -49,7 +47,6 @@ public class Item : ScriptableObject {
             StaminaController.instance.reduction = 1;
         }
         Debug.Log("Using: " + name);
-
     }
 
     public void UseBluePotion()
@@ -68,9 +65,7 @@ public class Item : ScriptableObject {
 
     public void UseHeart()
     {
-
-        Debug.Log("Using: " + name);
-
+        StaminaController.instance.reduction = 1;
     }
 
     public void UseGreenPotion()
