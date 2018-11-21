@@ -22,6 +22,20 @@ public class PlayerController : MonoBehaviour
     [Range(0, 20)]
     public float velocity;
 
+    public static PlayerController instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(instance);
+        }
+    }
+
+
     // Use this for initialization
     void Start()
     {

@@ -9,6 +9,10 @@ public class Item : ScriptableObject {
 
     public bool state = false;
 
+
+    public float elapsedtimeBoltA = 0;
+    
+
     public void Use()
     {
 
@@ -39,7 +43,11 @@ public class Item : ScriptableObject {
 
     public void UseCake()
     {
-
+        StaminaController.instance.reduction = StaminaController.instance.reduction - 10f;
+        if (StaminaController.instance.reduction <= 1)
+        {
+            StaminaController.instance.reduction = 1;
+        }
         Debug.Log("Using: " + name);
 
     }
@@ -74,6 +82,11 @@ public class Item : ScriptableObject {
 
     public void UseWatermelon()
     {
+        StaminaController.instance.reduction = StaminaController.instance.reduction - 20f;
+        if (StaminaController.instance.reduction <= 1)
+        {
+            StaminaController.instance.reduction = 1;
+        }
 
         Debug.Log("Using: " + name);
 
@@ -81,6 +94,9 @@ public class Item : ScriptableObject {
 
     public void UseBoltA()
     {
+        PlayerController.instance.velocity = PlayerController.instance.velocity * 1.5f;
+     
+
         Debug.Log("Using: " + name);
     }
 

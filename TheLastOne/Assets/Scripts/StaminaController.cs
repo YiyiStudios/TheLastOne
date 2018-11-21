@@ -14,6 +14,23 @@ public class StaminaController : MonoBehaviour
     float time;
     bool iswalk = false;
     float colorlerp = 0f;
+
+    public static StaminaController instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(instance);
+        }
+    }
+
+
+
     // Use this for initialization
     void Start()
     {
@@ -28,9 +45,9 @@ public class StaminaController : MonoBehaviour
     }
     public void ReduceStaminaBar()
     {
+        imagelifebar.fillAmount = Mathf.InverseLerp(staminabar, 0, reduction);
         if (PlayerController.mov != Vector2.zero)
         {
-            imagelifebar.fillAmount = Mathf.InverseLerp(staminabar, 0, reduction);
             elapsedtime += Time.deltaTime;
             if (elapsedtime >= timetoreduction)
             {
