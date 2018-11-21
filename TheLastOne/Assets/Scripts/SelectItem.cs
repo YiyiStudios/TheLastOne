@@ -20,8 +20,7 @@ public class SelectItem : MonoBehaviour {
         
         Debug.Log("Soy " + item.name);
         Debug.Log("Estado " + item.state);
-
-
+        
         if (!item.state)
         {
             InventoryController.instance.Add(item);
