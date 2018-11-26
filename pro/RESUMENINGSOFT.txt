@@ -1,0 +1,16 @@
+Faulty Nature: Son fallos acumulados a lo largo del ciclo de vida del software.
+Testing: Proceso de ejecutar datos de entrada y analizar los de salida
+Scenario: Expresa un comportamiento especifico en un user story
+Script: Secuencia de instrucciones escrita en lenguaje natural
+
+Given	"one precondition"	(DEFINE EL CONTEXTO DEL ESCENARIO)
+When 	"ac action occurs"	(es una accion que crea transicion de estado)
+Then	"a consequence"		(Es una concecuencia de la accion)
+
+User story : como estudiante , quiero comprar un pase mensual para ir al colegio y a sus alrededores.
+Given	el comprador es el estudiante (<buyer_cattegory>)
+And	el comprador seleccion un pase mensual
+When 	el comprador paga
+Then	una venta ocurre con un monto de 76 (<price>) dolares
+
+CRITERIOS DE ACEPTACION SON LOS SCENARIOS
